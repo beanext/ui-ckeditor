@@ -1,0 +1,33 @@
+{
+  "name": "ui-ckeditor",
+  "homepage": "https://github.com/beanext/ui-ckeditor",
+  "authors": [
+    "Michael Qian"
+  ],
+  "main": [
+    "./dist/beanext-ui-datepicker.js",
+    "./dist/datepicker/WdatePicker.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib*",
+    "src*",
+    "node_modules",
+    "bower_components",
+    "test*",
+    "demo*",
+    "example*",
+    "GruntFile.js",
+    "package.json"
+  ],
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.0",
+    "angular-ckeditor": "^1.0.0",
+    "ckeditor": "#full/4.4.2"
+  },
+  "moduleName": "uickeditorApp"
+}
