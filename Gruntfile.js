@@ -188,6 +188,14 @@ module.exports = function (grunt) {
           src: [
             '*.js'
           ]
+        },{
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/angular-ckeditor/',
+          dest: '<%= yeoman.dist %>/angular-ckeditor/',
+          src: [
+            '*.js'
+          ]
         }]
       },
       example: {
@@ -202,18 +210,10 @@ module.exports = function (grunt) {
         },{
           expand: true,
           dot: true,
-          cwd: 'bower_components/angular-ckeditor',
-          dest: '<%= yeoman.example %>/scripts/',
-          src: [
-            '*.js'
-          ]
-        },{
-          expand: true,
-          dot: true,
           cwd: 'bower_components/angular',
           dest: '<%= yeoman.example %>/scripts/',
           src: [
-            '*.js'
+            'angular*.js'
           ]
         }]
       }

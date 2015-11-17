@@ -5,7 +5,8 @@
     "Michael Qian"
   ],
   "main": [
-    "./dist/ckeditor.js"
+    "dist/ckeditor/ckeditor.js",
+    "dist/angular-ckeditor/angular-ckeditor.js"
   ],
   "ignore": [
     "**/.*",
@@ -19,14 +20,14 @@
     "GruntFile.js",
     "package.json"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
-    "angular": "^1.4.0",
-    "angular-ckeditor": "^1.0.0",
-    "ckeditor": "#full/4.4.2"
+    "angular": "^1.4.0"
   },
   "devDependencies": {
-    "angular-mocks": "^1.4.0"
+    "angular-mocks": "^1.4.0",
+    "angular-ckeditor": "^1.0.0",
+    "ckeditor": "#full/4.4.2"
   },
   "moduleName": "uickeditorApp"
 }
