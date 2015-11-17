@@ -12,7 +12,23 @@ CKEDITOR.editorConfig = function( config ) {
     //config.image_previewText = 'juhua';
     //config.filebrowserBrowseUrl = '123';
     //config.filebrowserUploadUrl = '123';
+
     config.toolbar_buiSimple = [
+        ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',
+            'Undo', 'Redo', '-',
+            'Find', 'Replace', '-',
+            'SelectAll', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-',
+            'RemoveFormat', 'NumberedList', 'BulletedList', '-',
+            'Outdent', 'Indent', '-',
+            'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-',
+            'BidiLtr', 'BidiRtl'],
+        '/',
+        ['Link', 'Unlink', 'Anchor', 'HorizontalRule', 'Image', 'Flash', 'Table', 'Smiley', 'SpecialChar', '-',
+            'Styles', 'Format', 'Font', 'FontSize', 'TextColor', 'BGColor', 'RemoveFormat'],
+        ['Maximize']
+    ];
+
+    config.toolbar_buiSidenav = [
         ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',
             'Undo', 'Redo', '-',
             'Find', 'Replace', '-',
@@ -29,7 +45,7 @@ CKEDITOR.editorConfig = function( config ) {
     if(config.extraPlugins.length || config.extraPlugins.indexOf(0) !== ",") {
         config.extraPlugins = "," + config.extraPlugins;
     }
-    config.extraPlugins += 'sidenav,filetools,clipboard,uploadwidget';
+    config.extraPlugins += 'filetools,clipboard,uploadwidget';
     config.autoGrow_minHeight = 200;
     config.autoGrow_maxHeight = 600;
     config.autoGrow_bottomSpace = 50;

@@ -5,8 +5,7 @@
     "Michael Qian"
   ],
   "main": [
-    "./dist/beanext-ui-datepicker.js",
-    "./dist/datepicker/WdatePicker.js"
+    "./dist/ckeditor.js"
   ],
   "ignore": [
     "**/.*",
