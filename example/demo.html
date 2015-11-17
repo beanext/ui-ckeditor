@@ -6,20 +6,21 @@
 </head>
 <body ng-app="controllers.ckeditor">
 <div ng-controller="CkeditorCtrl">
-    <div ckeditor="{toolbar: 'buiSimple'}" ng-model="content" change="onChange($event)"></div>
+    <div ckeditor="{toolbar: 'buiSimple'}" ng-model="content1" change="onChange($event)" blur="onBlur($event)"></div>
+    <div ckeditor="{toolbar: 'buiSidenav', extraPlugins: 'sidenav'}" ng-model="content2" change="onChange($event)"></div>
 </div>
 <script src="scripts/angular.js"></script>
 <script src="scripts/ckeditor/ckeditor.js"></script>
 <script src="scripts/angular-ckeditor.js"></script>
-
 <script>
     angular.module('controllers.ckeditor', ['ckeditor']).controller('CkeditorCtrl', ['$scope', function ($scope) {
         $scope.onChange = function (event) {
-            console.log(event);
+		console.log(event);
         };
 
-        $scope.c = function () {
-        }
+	$scope.onBlur = function (event) {
+		console.log(event);
+	}
     }]);
 </script>
 </body>

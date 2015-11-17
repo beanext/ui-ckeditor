@@ -4,9 +4,6 @@
  */
 
 CKEDITOR.plugins.setLang( 'sidenav', 'zh-cn', {
-	title: '占位符属性',
-	toolbar: '占位符',
-	name: '占位符名称',
-	invalidName: '占位符名称不能为空，并且不能包含以下字符：[、]、<、>',
-	pathName: '占位符'
+	toolbar: '设置为导航标题',
+	pathName: '设置为导航标题'
 } );

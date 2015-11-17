@@ -16,13 +16,24 @@
 		icons: 'sidenav',
 		hidpi: true,
 		init: function( editor ) {
+			var text = editor.lang.sidenav.toolbar;
+
 			editor.addCommand( 'sidenav', CKEDITOR.plugins.sidenav);
 			editor.ui.addButton && editor.ui.addButton( 'SideNavigation', {
-				label: editor.lang.sidenav.toolbar,
+				label: text,
 				command: 'sidenav',
 				toolbar: 'insert,5',
 				icon: 'sidenav'
-			} );
+			});
+			var head = document.getElementsByTagName('head')[0],  style = document.createElement('style');
+			var css = '\r\n\ta.cke_button.cke_button__sidenavigation {\r\n\t\tborder:1px solid #ddd;\r\n\t}\r\n\ta.cke_button.cke_button__sidenavigation:hover {\r\n\t\tborder-color:#a3bcd3;\r\n\t}\r\n\tspan.cke_button_icon.cke_button__sidenav_icon {\r\n\t\twidth:100px;\r\n\t}\r\n\tspan.cke_button_icon.cke_button__sidenav_icon:before {\r\n\t\tcontent: "'+text+'";color:#474747;text-align:center;\r\n\t}';
+			style.type = 'text/css';
+			if(style.styleSheet){
+				style.styleSheet.cssText = css;
+			}else{
+				style.appendChild(document.createTextNode(css));
+			}
+			head.appendChild(style);
 		}
 	} );
 
@@ -39,7 +50,8 @@
 				id: name,
 				contenteditable: false,
 				'data-cke-saved-name': name,
-				'class':'fa fa-flag nav-anchor'
+				'class':'fa fa-flag nav-anchor',
+				'style': 'outline: 1px dotted #a3bcd3;'
 			};
 
 			if ( CKEDITOR.env.ie && CKEDITOR.env.version < 9 ) {
