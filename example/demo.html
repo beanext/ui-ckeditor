@@ -6,7 +6,7 @@
 </head>
 <body ng-app="controllers.ckeditor">
 <div ng-controller="CkeditorCtrl">
-    <div ckeditor="options" ng-model="content" change="onChange($event)"></div>
+    <div ckeditor="{toolbar: 'buiSimple'}" ng-model="content" change="onChange($event)"></div>
 </div>
 <script src="scripts/angular.js"></script>
 <script src="scripts/ckeditor/ckeditor.js"></script>
@@ -14,34 +14,6 @@
 
 <script>
     angular.module('controllers.ckeditor', ['ckeditor']).controller('CkeditorCtrl', ['$scope', function ($scope) {
-        $scope.options = {
-            language: 'zh-cn',
-            allowedContent: false,
-            entities: false,
-            skin: 'office2013',
-            image_previewText: 'juhua',
-            filebrowserBrowseUrl: '123',
-            filebrowserUploadUrl: '123',
-            toolbar: [
-                ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',
-                    'Undo', 'Redo', '-',
-                    'Find', 'Replace', '-',
-                    'SelectAll', '-', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-',
-                    'RemoveFormat', 'NumberedList', 'BulletedList', '-',
-                    'Outdent', 'Indent', '-',
-                    'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-',
-                    'BidiLtr', 'BidiRtl'],
-                '/',
-                ['Link', 'Unlink', 'Anchor', 'HorizontalRule', 'Image', 'Flash', 'Table', 'Smiley', 'SideNavigation', 'SpecialChar', '-',
-                    'Styles', 'Format', 'Font', 'FontSize', 'TextColor', 'BGColor', 'RemoveFormat'],
-                ['Maximize']
-            ],
-            extraPlugins: 'sidenav,filetools,clipboard,uploadwidget,autogrow',
-            autoGrow_minHeight: 200,
-            autoGrow_maxHeight: 600,
-            autoGrow_bottomSpace: 50
-        };
-
         $scope.onChange = function (event) {
             console.log(event);
         };

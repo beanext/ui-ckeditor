@@ -180,6 +180,14 @@ module.exports = function (grunt) {
           src: [
             '**'
           ]
+        },{
+          expand: true,
+          dot: true,
+          cwd: 'src/',
+          dest: '<%= yeoman.dist %>/ckeditor/',
+          src: [
+            '*.js'
+          ]
         }]
       },
       example: {
