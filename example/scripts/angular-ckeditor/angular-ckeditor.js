@@ -6,8 +6,8 @@
 }(this, function (angular) {
 
   angular
-  .module('ckeditor', [])
-  .directive('ckeditor', ['$parse', ckeditorDirective]);
+      .module('ckeditor', [])
+      .directive('ckeditor', ['$parse', ckeditorDirective]);
 
   // Polyfill setImmediate function.
   var setImmediate = window && window.setImmediate ? window.setImmediate : function (fn) {

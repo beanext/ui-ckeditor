@@ -1,14 +1,13 @@
-if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports) {
-  module.exports = 'ckeditor';
-}
-
 (function (root, factory) {
-  factory(angular);
+  // AMD
+  if (typeof define === 'function' && define.amd) define(['angular'], factory);
+  // Global
+  else factory(angular);
 }(this, function (angular) {
 
   angular
-  .module('ckeditor', [])
-  .directive('ckeditor', ['$parse', ckeditorDirective]);
+      .module('ckeditor', [])
+      .directive('ckeditor', ['$parse', ckeditorDirective]);
 
   // Polyfill setImmediate function.
   var setImmediate = window && window.setImmediate ? window.setImmediate : function (fn) {
@@ -38,11 +37,25 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
         // get needed controllers
         var controller = ctrls[0]; // our own, see below
         var ngModelController = ctrls[1];
-
         // Initialize the editor content when it is ready.
         controller.ready().then(function initialize() {
           // Sync view on specific events.
           ['dataReady', 'change', 'blur', 'saveSnapshot'].forEach(function (event) {
+            if(attrs[event]){
+              var key = event;
+              if(event==='data-ready') {
+                key = "dataReady"
+              } else if(event==='save-snapshot') {
+                key = "saveSnapshot"
+              }
+              controller.instance.on(key,function($event){
+                var eventScope = scope.$new();
+                eventScope.$event = $event;
+                eventScope.$event.html = controller.instance.getData();
+                eventScope.$event.text = controller.instance.document.getBody().getText();
+                $parse(attrs[key])(eventScope);
+              });
+            }
             controller.onCKEvent(event, function syncView() {
               ngModelController.$setViewValue(controller.instance.getData() || '');
             });
