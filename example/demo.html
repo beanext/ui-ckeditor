@@ -15,12 +15,16 @@
 <script>
     angular.module('controllers.ckeditor', ['ckeditor']).controller('CkeditorCtrl', ['$scope', function ($scope) {
         $scope.onChange = function (event) {
-		console.log(event);
+		    console.log(event);
+            console.log(event.html);
+            console.log(event.text);
         };
 
-	$scope.onBlur = function (event) {
-		console.log(event);
-	}
+        $scope.onBlur = function (event) {
+            console.log(event);
+            console.log(event.html);
+            console.log(event.text);
+        }
     }]);
 </script>
 </body>

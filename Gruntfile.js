@@ -142,17 +142,17 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    /*uglify: {
+    uglify: {
       dist: {
         files: [{
-          src: 'src/beanext-ui-datepicker.js',
-          dest: '<%= yeoman.dist %>/beanext-ui-datepicker.min.js'
+          src: '<%= yeoman.dist %>/angular-ckeditor/angular-ckeditor.js',
+          dest: '<%= yeoman.dist %>/angular-ckeditor/angular-ckeditor.min.js'
         }]
       }
     },
-    concat: {
-      dist: {},
-    },*/
+    // concat: {
+    //  dist: {},
+    //},
 
     copy: {
       dist: {
@@ -186,15 +186,15 @@ module.exports = function (grunt) {
           cwd: 'src/',
           dest: '<%= yeoman.dist %>/ckeditor/',
           src: [
-            '*.js'
+            'config.js'
           ]
         },{
           expand: true,
           dot: true,
-          cwd: 'bower_components/angular-ckeditor/',
+          cwd: 'src/',
           dest: '<%= yeoman.dist %>/angular-ckeditor/',
           src: [
-            '*.js'
+            'angular-ckeditor.js'
           ]
         }]
       },
@@ -248,6 +248,7 @@ module.exports = function (grunt) {
     'clean:dist',
     //'concurrent:dist',
     'copy:dist',
+    'uglify:dist',
     //'filerev'
     'copy:example'
   ]);
