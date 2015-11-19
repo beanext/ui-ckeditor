@@ -1,8 +1,8 @@
+if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports) {
+  module.exports = 'cnb.welcome';
+}
 (function (root, factory) {
-  // AMD
-  if (typeof define === 'function' && define.amd) define(['angular'], factory);
-  // Global
-  else factory(angular);
+  factory(angular);
 }(this, function (angular) {
 
   angular
