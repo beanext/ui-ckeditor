@@ -45,7 +45,7 @@
 			function isElement ( element ) {
 				return element.type == CKEDITOR.NODE_ELEMENT;
 			};
-			var name = "1";
+			var name = "nav"+new Date().getTime();
 			var attributes = {
 				id: name,
 				contenteditable: false,
