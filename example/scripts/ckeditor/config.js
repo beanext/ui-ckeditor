@@ -9,9 +9,9 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
     config.language = 'zh-cn';
     config.skin = 'office2013';
-    //config.image_previewText = 'juhua';
-    //config.filebrowserBrowseUrl = '123';
-    //config.filebrowserUploadUrl = '123';
+    //config.image_previewText = '';
+    //config.filebrowserBrowseUrl = '';
+    //config.filebrowserUploadUrl = '';
 
     config.toolbar_buiSimple = [
         ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',
