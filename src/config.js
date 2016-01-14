@@ -36,6 +36,9 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.fontSize_sizes = '特号/54pt;初号/42pt;小初/36pt;大一/31.5pt;一号/28pt;小一/24pt;二号/21pt;小二/18pt;三号/16pt;小三/15pt;四号/14pt;小四/12pt;五号/10pt;小五/9pt;六号/8pt;小六/6.875pt;七号/5.25pt;八号/4.5pt;' + config.fontSize_sizes;
 
+    config.pasteFromWordRemoveFontStyles = false;
+    config.pasteFromWordRemoveStyles = false;
+    config.allowedContent = true;
     config.toolbar_buiSidenav = [
         ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-',
             'Undo', 'Redo', '-',
@@ -58,3 +61,4 @@ CKEDITOR.editorConfig = function( config ) {
     config.autoGrow_maxHeight = 600;
     config.autoGrow_bottomSpace = 50;
 };
+
