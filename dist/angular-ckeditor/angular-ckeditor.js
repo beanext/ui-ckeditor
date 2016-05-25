@@ -151,7 +151,11 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
     $scope.$on('$destroy', function onDestroy() {
       // do not delete too fast or pending events will throw errors
       readyDeferred.promise.then(function() {
-        instance.destroy(false);
+        try {
+          instance.destroy(false);
+        } catch (e) {
+
+        }
       });
     });
   }

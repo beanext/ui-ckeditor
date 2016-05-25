@@ -20,7 +20,7 @@
     "tag": "full/4.4.2",
     "commit": "fb81beef139be81a202f6e618064ef5ab6f619ff"
   },
-  "_source": "git://github.com/ckeditor/ckeditor-releases.git",
+  "_source": "https://github.com/ckeditor/ckeditor-releases.git",
   "_target": "full/4.4.2",
   "_originalSource": "ckeditor"
 }
